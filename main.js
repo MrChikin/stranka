@@ -1,7 +1,7 @@
 var duck = document.querySelector(".duck");
 var blood = document.querySelector(".blood"); 
-var body = document.querySelector("body");
-document.addEventListener("click", function(){
+var body = document.querySelector(".index");
+duck.addEventListener("click", function(){
     var mouseMoveListener = function(event) {
     var mouseX = event.clientX;
     var mouseY = event.clientY;
@@ -23,8 +23,6 @@ document.addEventListener("click", function(){
   
     duck.style.left = newX + 'px';
     duck.style.top = newY + 'px';
-    
-    quack.play();
     if (newX > imageX ){
         duck.style.transform ='scaleX(1)';
     };
@@ -38,10 +36,13 @@ document.addEventListener("click", function(){
       blood.style.left = newX + 'px';
       blood.style.top = newY + 'px';
       body.style.userSelect = 'none';
+      document.userSelect = 'none';
+      duck.removeEventListener('mousemove', mouseMoveListener);
       document.removeEventListener('mousemove', mouseMoveListener);
     }
   };
   
   document.addEventListener('mousemove', mouseMoveListener);
+  
   
 });
