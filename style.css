@@ -323,3 +323,7 @@ a{
   width: 50px;
   display: none;
 }
+
+.myAudio {
+  display: none;
+}

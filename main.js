@@ -1,6 +1,7 @@
 var duck = document.querySelector(".duck");
 var blood = document.querySelector(".blood"); 
 var body = document.querySelector(".index");
+var quack = document.querySelector(".myAudio");
 duck.addEventListener("click", function(){
     var mouseMoveListener = function(event) {
     var mouseX = event.clientX;
@@ -23,6 +24,8 @@ duck.addEventListener("click", function(){
   
     duck.style.left = newX + 'px';
     duck.style.top = newY + 'px';
+
+    quack.play();
     if (newX > imageX ){
         duck.style.transform ='scaleX(1)';
     };
